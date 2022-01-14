@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>text auto writting</title>
+</head>
+<style>
+    body{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-size: 28px;
+        color: rebeccapurple;
+        height: 90vh;
+    }
+</style>
+<body>
+    
+</body>
+<script>
+    const text = 'salam a tous je suis oumar ';
+    let index = 0;
+
+    function textWritting(){
+        document.body.innerText = text.slice(0, index)
+        index++;
+        if(index > text.length -1){
+            index = 0
+        }
+    }
+
+    setInterval(() =>{
+        textWritting()
+    },100)
+</script>
+</html>

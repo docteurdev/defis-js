@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hamburger button</title>
+</head>
+
+<style>
+    *, ::after, ::before{
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
+    body{
+        display: flex;
+        justify-content: flex-end;
+        align-items: center;
+        margin: 0;
+        min-height: 100vh;
+    }
+
+    .content{
+        display: flex;
+        width: 50px;
+        height: 99vh;
+        margin-right: 6px;
+        padding: 8px;
+        transition: .5s;
+
+    }
+    .content .btn{
+        border: 1px solid grey;
+        color: white;
+        background: purple;
+        width: 25px;
+        height: 25px;
+        display: flex;
+        justify-content: center;
+        cursor: pointer;
+
+    }
+
+    nav{
+        background-color: rebeccapurple;
+        width: 100%;
+        display: none;
+    }
+
+    ul li{
+        list-style: none;
+        color: white;
+        text-align: center;
+    }
+
+    /* vvvvvvvv */
+
+    .displaying{
+        display: block;
+    }
+    .active{
+        width: 150px;
+        animation: move 1s ease-in;
+    }
+
+    @keyframes move {
+        from{
+            opacity: 0;
+        }
+        to{
+            opacity: 1;
+        }
+    }
+</style>
+<body>
+   <div class="container">
+       <div class="content">
+           <div class="btn">
+            ☰
+           </div>
+           <nav>
+               <ul>
+                   <li>menu 1</li>
+                   <li>menu 2</li>
+                   <li>menu 3</li>
+                   <li>menu 4</li>
+               </ul>
+           </nav>
+       </div>
+   </div> 
+</body>
+<script>
+    const btn = document.querySelector('.btn');
+    const nav = document.querySelector('nav');
+    const content = document.querySelector('.content');
+
+    btn.addEventListener('click', () =>{
+        nav.classList.toggle('displaying');
+        content.classList.toggle('active')
+    })
+
+</script>
+</html>
